@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Heros</title>
+    <script defer src="/script.js"></script>
+    <link rel="stylesheet" href="/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+  </head>
+  <body>
+    <nav>
+      <div class="title">
+        <h1>Lost Heroines</h1>
+      </div>
+      <div class="nav-links">
+        <a href="#map" class="active">Explore</a>
+        <a href="#mission">Mission</a>
+        <a href="#about">About</a>
+      </div>
+    </nav>
+    <div id="map-container">
+      <div id="map">
+        <script>
+          window.map = L.map("map", {
+            minZoom: 2.5,
+            maxZoom: 10,
+          }).setView([0, 0], 0);
+          L.tileLayer(
+            "https://api.maptiler.com/maps/landscape/256/{z}/{x}/{y}.png?key=GynfK3IEy9p26rRKnbYu",
+            {
+              attribution:
+                '<a href="https://www.maptiler.com/copyright/" target="_blank">&copy; MapTiler</a> <a href="https://www.openstreetmap.org/copyright" target="_blank">&copy; OpenStreetMap contributors</a>',
+            }
+          ).addTo(window.map);
+
+          var bounds = L.latLngBounds(L.latLng(-85, -180), L.latLng(85, 180));
+          window.map.setMaxBounds(bounds);
+        </script>
+      </div>
+      <div id="overlay">
+        <button id="start-button">Start your journey</button>
+      </div>
+      <div class="info-box" id="info-box_1">
+        <button id="close-info_1">X</button>
+        <h2>Laskarina Bouboulina</h2>
+        <p>Laskarina Pinotsi, commonly known as Bouboulina, was a Greek naval commander in the Greek War of Independence in 1821, considered the first woman to attain the rank of admiral.</p>
+      </div>
+      <div class="info-box" id="info-box_2">
+        <button id="close-info_2">X</button>
+        <h2>Lyudmila Pavlichenko</h2>
+        <p>Lyudmila Mikhailovna Pavlichenko was a Soviet sniper in the Red Army during World War II, with a kill count of 309 she is considered one of the deadliest snipers in history. After she was injured in battle by a mortar shell, she was evacuated to Moscow.</p>
+      </div>
+      <div class="info-box" id="info-box_3">
+        <button id="close-info_3">X</button>
+        <h2>Lakshmi Sahgal</h2>
+        <p>Lakshmi Sahagal during the surrender of Singapore by the British to the Japanese, Lakshmi aided wounded prisoners of war(She was doctor by profession), many of whom were interested in forming an Indian independence army. It was when Subash Chandra Bose made his intention to form a women's infantry reginment that Dr Lakshmi Swaminathan became Captain Lakshmi</p>
+      </div>
+    </div>
+
+    <div id="mission">
+      <h1>Mission</h1>
+      <p>
+        In a realm veiled by mist and myth, you embark on a quest to bring light
+        and liberation to your clan. Guided by ancient maps and whispered
+        legends, you will uncover hidden heroines whose deeds have been woven
+        into the fabric of history. Each parchment you find reveals the tale of
+        a woman who defied the darkness of her age — and by learning,
+        reflecting, and gathering their wisdom, you will earn enlightenment
+        points that strengthen your people and illuminate the world. This
+        journey is more than a quest; it is a path to awaken the forgotten
+        voices of history and ignite the flame of knowledge within yourself.
+      </p>
+    </div>
+    <div id="about">
+      <h1>About Me</h1>
+      <p>
+        I am Sivangi, a curious creator weaving worlds of code and imagination.
+        I build tools, stories, and journeys that invite others to learn,
+        reflect, and grow. You can explore more of my work on my Github at
+        <a href="https://github.com/Angiigna">Angiigna</a>
+      </p>
+    </div>
+  </body>
+</html>
